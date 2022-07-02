@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #606060;
+  --color-blue: ##2429af;
+  --font-primary: "DM Sans", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+  height: fit-content;
+}
+body {
+  background-color: #f3f3f3;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+
+
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* GENERAL STYLING ENDS */
+
+/* TYPOGRAPHY STARTS*/
+
+/* - Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+- Letter spacing
+-0.5px
+0.75px */
+.flex-row{
+  display: flex;
+  justify-content: space-between;
+}
+.heading-primary {
+  font-family: var(--font-primary);
+  font-size: 6rem;
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: 1.2;
+}
+.heading-secondary {
+  font-family: var(--font-primary);
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--color-black);
+  text-decoration: none;
+}
+.paragraph-primary {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-grey);
+  text-transform: none;
+}
+.paragraph-secondary {
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-black);
+  text-transform: none;
+}
+.nav-link,.nav-logo {
+  font-family: var(--font-primary);
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--color-black);
+  text-transform: none;
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-size: 3.6rem;
+}
+
+/* TYPOGRAPHY ENDs */
+
+/* SECTION WISE STYLE STARTS */
+
+/* header/nav style starts*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 8rem;
+}
+.nav-links {
+  display: flex;
+  gap: 6rem;
+}
+/* header/nav style ends*/
+
+/* hero section sytle starts */
+.hero {
+  margin-bottom: 12rem;
+}
+
+.hero .flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+}
+.hero .flex-row .column:nth-child(1) {
+  flex-basis: 50%;
+}
+
+.hero .heading-primary {
+  margin-bottom: 4rem;
+}
+
+.hero .paragraph-primary:not(:last-child) {
+  margin-bottom: 4rem;
+}
+/* hero section sytle ends */
+
+/* software and skills section sytle starts */
+.skills-softwares {
+  margin-bottom: 12rem;
+}
+
+.skills-softwares .flex-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.skills-softwares .flex-row:nth-child(1) {
+  margin-bottom: 8rem;
+}
+
+.skills-softwares .flex-row .column h4 {
+  width: 300px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-grey);
+  margin-bottom: 7rem;
+}
+/*  software and skills  section sytle ends */
+
+/* contact section sytle starts */
+
+.contact {
+  margin-bottom: 12rem;
+}
+
+.contact .flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact .flex-row .column:nth-child(1) {
+  flex-basis: 30%;
+}
+
+/* contact section sytle ends */
+
+/* footer section sytle starts */
+
+.footer {
+  margin-bottom: 4rem;
+}
+.footer .flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+}
+/* footer section sytle ends */
+
+/* SECTION WISE STYLE ENDS */
+
+/* OTHER PAGES STYLING */
+
+ *
+.blog-card{
+  display: flex;
+  justify-content: space-between;
+
+  padding-block: 10rem;
+  border-bottom: 2.5px solid var(--color-grey);
+  margin-bottom:5rem;
+}
+
+.blog-card-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-title{
+  font-family: var(--font-secondary);
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-black);
+  margin-bottom: 2.4rem;
+}
+.blog-subtitle{
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-black);
+  margin-bottom: 2.4rem;
+}
+.blog-date{
+  font-family: var(--font-secondary);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey);
+}
+
+.blog-text-info{
+
+}
+.blog-link{
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-black);
+}
+
+.blog-card-img{
+
+}
+/* BLOG PAGE STYLING ENDS */
+
+/* BLOG DETAIL STYLING STARTS */
+
+.blog-detail {
+  margin-bottom: 10rem;
+}
+
+.blog-card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.blog-para {
+  margin-top: 4rem;
+}
+.blog-paragraph {
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-black);
+  margin-bottom: 2.4rem;
+}
+
+.underline{
+  text-decoration: underline;
+}
+@media (max-width: 59rem){
+  .container {
+    max-width: 75rem;
+  }
+  .nav{
+    margin-block: 4rem;
+  }
+  .flex-row{
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .heading-primary{
+    font-size: 5rem;
+  }
+  .paragraph-primary{
+    font-size: 2.4rem;
+  }
+  .skills-section .flex-row{
+    gap: 4rem;
+  }
+  .contact .flex-row{
+    gap: 2rem;
+    align-items: unset;
+  }
+
+  .contact .column:nth-child(2){
+    text-align: end;
+  }
+  .contact {
+    margin-bottom: 6rem;
+  }
+  .footer{
+    margin-bottom: 5rem;
+  }
+}
+
+/* 0 - 544px */
+@media (max-width: 34rem) {
+  .container {
+    max-width: 40rem;
+  }
+  .nav {
+    margin-block: 2rem;
+  }
+  .heading-primary{
+    font-size: 4rem;
+  }
+  .paragraph-primary{
+    font-size: 2rem;
+  }
+  .hero .heading-primary {
+    margin-bottom: 2rem;
+  }
+  .hero .paragraph-primary:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .hero {
+    margin-block: 6rem;
+  }
+  .skills-section .flex-row {
+    gap: 2rem;
+  }
+  .skills-section {
+    margin-bottom: 5rem;
+  }
+  .heading-secondary{
+    font-size: 2.6rem;
+  }
+  .footer{
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .contact .column:nth-child(2) {
+    text-align: start;
+  }
+  .blog-card{
+    flex-direction: column-reverse;
+  gap: 4rem;
+  padding-block: 6rem;
+  margin-bottom: 2rem;
+  }
+  .blog-card-detail{
+    flex-direction: column;
+  }
+  header,main,footer{
+    padding: 0 1rem;
+  }
+}

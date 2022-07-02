@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="flex-row">
+            <div class="column">
+              <h1 class="heading-primary">
+               {{head}}
+              </h1>
+              <p class="paragraph-primary">
+                {{para}}
+              </p>
+              <p class="paragraph-primary">
+                {{para2}}
+              </p>
+            </div>
+            <div class="column">
+              <img
+                src="{{image.url}}"
+                alt=""
+                class="img-responsive"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills-softwares">
+        <div class="container">
+          <div class="flex-row">
+            <div class="column">
+              <h4 class="paragraph-secondary">Main Skills &#8594 </h4>
+            </div>
+            <div class="column">
+              <p class="paragraph-secondary">
+                {{skills}}
+              </p>
+            </div>
+          </div>
+          <div class="flex-row">
+            <div class="column">
+              <h4 class="paragraph-secondary">Main Softwares &#8594</h4>
+            </div>
+            <div class="column">
+              <p class="paragraph-secondary">
+                {{softwares}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <hr class="line" />
+        </div>
+      </section>
+      <section class="contact">
+        <div class="container">
+          <div class="flex-row">
+            <div class="column">
+              <h2 class="heading-secondary">
+                I am thrilled to answer to your next project &rarr;
+              </h2>
+            </div>
+            <div class="column">
+              <a href="mailto:puzan8516@gmail.com" class="heading-secondary"
+                >puzan8516@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock content %}
+    

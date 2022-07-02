@@ -1,0 +1,43 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <a href="{% url 'index' %}" class="nav-logo">puzan.</a>
+          <div class="nav-links">
+            <a href="{% url 'blogs' %}" class="nav-link">Blogs</a>
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    {% block content %}
+    {% endblock content %}
+    <footer class="footer">
+      <div class="container">
+        <div class="flex-row">
+          <div class="column">
+            <p class="nav-link">&copy; puzan 2022</p>
+          </div>
+          <div class="column">
+            <div class="social-links">
+              <a href="#" class="nav-link">Facebook</a>
+              <a href="#" class="nav-link">Linkedin</a>
+              <a href="#" class="nav-link">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
