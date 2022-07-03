@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import blogs,Index
+from .forms import blogform
 
 # Create your views here.
 
@@ -41,3 +42,18 @@ def blogdetail(request, id):
                 'blog': blog,
             }
     return render(request, 'blogs/blogdetail.html', context)
+
+def blogupdate(request):
+    if request.method=='POST':
+        form=blogform(request.POST)
+        if form.is_valid():
+
+            print("valid data")
+            print('title',form.cleaned_data['title'])
+            print('paragraph',form.cleaned_data['email'])
+            print('password',form.cleaned_data['password'])
+            form=blogform()
+            return render(request,'blogs/happen.html',{'form':form})
+    else:
+        form=blogform()
+    return render(request,'blogs/blog_update.html',{'form':form})
