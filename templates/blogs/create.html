@@ -2,12 +2,12 @@
 {% block main %}
 <section class="section-blogs">
   <div class="container">
-    <h1 class="heading-primary">Update this Blog</h1>
+    <h1 class="heading-primary">Create a New Blog</h1>
     <div>
        <form action="" method="post" enctype="multipart/form-data">
          {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn">Update</button>
+        <button type="submit" class="btn">Submit</button>
     </form>
     </div>
   </div>

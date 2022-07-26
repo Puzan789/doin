@@ -1,9 +1,15 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} 
+{% block main %}
 <section class="section-blogs">
   <div class="container">
-    <a href="{% url 'blogs' %}" class="nav-link underline">Back to blogs</a>
+  <div class="flex">
+    <a href="{% url 'blog' %}" class="nav-link underline">Back to blogs</a>
+    <div class="flex g-3">
+      <a href="{% url 'blog_update' blog.id  %}" class="nav-link underline">Edit this blog</a>
+    <a href="{% url 'blog_delete' blog.id  %}" class="nav-link underline color-red">Delete this blog</a>
+    </div>
+  </div>
+  
   </div>
   <div class="container">
     <div class="blog-detail">
@@ -11,7 +17,7 @@
         <div class="blog-card-img">
         {% load static %}
           <img
-            src="{{blog.image.url}}"
+            src="{{ blog.image.url }}"
             alt=""
             class="img-responsive"
           />
@@ -20,9 +26,9 @@
           <div class="blog-text-info">
             <h4 class="blog-title">{{blog.title}}</h4>
             <p class="blog-subtitle">
-              {{blog.subtitle}}
+              {{blog.subtitle | upper}}
             </p>
-            <span class="blog-date"> {{blo.date}} </span>
+            <span class="blog-date"> {{blog.date}} </span>
             <div class="blog-para">
               <p class="blog-paragraph">
                 {{blog.paragraph | safe}}
@@ -34,4 +40,4 @@
     </div>
   </div>
 </section>
-{% endblock content %}
+{% endblock %}

@@ -1,6 +1,8 @@
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import blogs,Index
-from .forms import blogform
+from .forms import blogform,blogmodelform
 
 # Create your views here.
 
@@ -43,17 +45,34 @@ def blogdetail(request, id):
             }
     return render(request, 'blogs/blogdetail.html', context)
 
-def blogupdate(request):
-    if request.method=='POST':
-        form=blogform(request.POST)
+def blog_create(request):
+    if request.method=='POST': 
+        form=blogform(request.POST,request.FILES)
         if form.is_valid():
-
-            print("valid data")
-            print('title',form.cleaned_data['title'])
-            print('paragraph',form.cleaned_data['email'])
-            print('password',form.cleaned_data['password'])
-            form=blogform()
-            return render(request,'blogs/happen.html',{'form':form})
+            blogs.objects.create(**form.cleaned_data)
+            return redirect('/blogs')                 
+        else:
+            print("form is not valid")
+            print(form.errors)
     else:
         form=blogform()
-    return render(request,'blogs/blog_update.html',{'form':form})
+    return render(request,'blogs/create.html',{'form':form})
+def blog_update(request,id):
+    blog = blogs.objects.get(id=id)
+    if request.method == 'POST':
+        form = blogmodelform(request.POST,request.FILES,instance=blog)
+        if form.is_valid():
+            #Blog.objects.filter(id=id).update(**form.cleaned_data)
+            form.save()
+            return redirect('/blogs')
+        else:
+            print('form is not valid')
+            print(form.errors)
+            return HttpResponse('error')
+    else:
+        form =  blogmodelform(instance=blog)
+    return render(request, 'blogs/blog_update.html', {'form': form})  
+def blog_delete(request,id):
+    blog = blogs.objects.get(id=id)
+    blog.delete()
+    return redirect('/blogs')

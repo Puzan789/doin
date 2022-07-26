@@ -1,14 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+/* General Styling 
+0. Inspect fonts and colors from the design and create variables for them.
+1. Import Fonts from Google Fonts*
+2. Set the font-size of the body to 62.5%
+3. Universal reset
+4. Create container for the page
+5. Code for image responsives
+
+/* Typography  
+1. Style the h1 element,h2 element, h3 element, h4 element, h5 element, h6 element, p element, a element, etc. or use names lik heading-primary, heading-secondary, paragraph-primary, paragraph-secondary, etc.
+/* Section styling
+1. Style for header section
+2. Style for main section
+3. Style for different other section
+/* Media queries for responsive 
+1. Media queries for tablet (@media (max-width: 59rem) {})
+2. Media queries for mobile (@media (max-width: 34rem) {})
+*/
+
+
+
+/* General Styling starts */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
-  --color-white: #fff;
-  --color-black: #000;
-  --color-grey: #606060;
-  --color-blue: ##2429af;
-  --font-primary: "DM Sans", sans-serif;
-  --font-secondary: "Inter", sans-serif;
-}
+    --color-white: #fff;
+    --color-black: #181717;
+    --color-grey: #606060;
+    --color-background: #F3F3F3;
+    --font-primary: "DM Sans", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+  }
 
 * {
   margin: 0;
@@ -18,11 +41,9 @@
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
-  scroll-behavior: smooth;
-  height: fit-content;
 }
 body {
-  background-color: #f3f3f3;
+  background-color: var(--color-background);
 }
 
 .container {
@@ -30,57 +51,34 @@ body {
   margin: 0 auto;
 }
 
-
-
-
 .img-responsive {
   max-width: 100%;
   height: auto;
 }
 
-/* GENERAL STYLING ENDS */
+/* General Styling ends */
 
 /* TYPOGRAPHY STARTS*/
-
-/* - Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-- Font weights
-Default: 400
-Medium: 500
-Semi-bold: 600
-Bold: 700
-- Line heights
-Default: 1
-Small: 1.05
-Medium: 1.2
-Paragraph default: 1.6
-Large: 1.8
-- Letter spacing
--0.5px
-0.75px */
-.flex-row{
-  display: flex;
-  justify-content: space-between;
-}
 .heading-primary {
   font-family: var(--font-primary);
   font-size: 6rem;
   font-weight: 500;
   color: var(--color-black);
-  line-height: 1.2;
+  line-height: 1;
+
 }
 .heading-secondary {
   font-family: var(--font-primary);
   font-size: 3.2rem;
   font-weight: 400;
   color: var(--color-black);
-  text-decoration: none;
+  
 }
 .paragraph-primary {
   font-family: var(--font-primary);
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.2;
   color: var(--color-grey);
   text-transform: none;
 }
@@ -88,26 +86,25 @@ Large: 1.8
   font-family: var(--font-secondary);
   font-size: 1.8rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--color-black);
   text-transform: none;
 }
 .nav-link,.nav-logo {
   font-family: var(--font-primary);
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-black);
   text-transform: none;
   text-decoration: none;
 }
 
-.nav-logo {
-  font-size: 3.6rem;
+.nav-logo{
+    font-size: 3.6rem;
 }
 
-/* TYPOGRAPHY ENDs */
+/* TYPOGRAPHY ENDS*/
 
-/* SECTION WISE STYLE STARTS */
 
 /* header/nav style starts*/
 .nav {
@@ -118,106 +115,127 @@ Large: 1.8
 }
 .nav-links {
   display: flex;
-  gap: 6rem;
+  gap: 6.2rem;
 }
 /* header/nav style ends*/
 
+
+
+
 /* hero section sytle starts */
-.hero {
-  margin-bottom: 12rem;
+
+.hero{
+  margin-block: 10rem;
 }
 
-.hero .flex-row {
+.flex-row{
   display: flex;
   justify-content: space-between;
-  gap: 10rem;
-}
-.hero .flex-row .column:nth-child(1) {
-  flex-basis: 50%;
+  
 }
 
-.hero .heading-primary {
+.flex-row .column:nth-child(1){
+  flex-basis: 55%;
+}
+
+
+.hero .heading-primary{
   margin-bottom: 4rem;
 }
 
-.hero .paragraph-primary:not(:last-child) {
+.hero .paragraph-primary:not(:last-child){
   margin-bottom: 4rem;
 }
+
 /* hero section sytle ends */
 
-/* software and skills section sytle starts */
-.skills-softwares {
-  margin-bottom: 12rem;
+/* skills and software section starts  CTRL + /   */
+
+.skills-section{
+  margin-bottom: 10rem;
 }
 
-.skills-softwares .flex-row {
-  display: flex;
+.flex-row h5{
+  font-weight: 500;
+text-decoration: underline;
+width: 25rem;
+}
+
+.skills-section .flex-row{
+ margin-bottom: 9rem;
+  gap: 10rem;
   justify-content: flex-start;
 }
 
-.skills-softwares .flex-row:nth-child(1) {
-  margin-bottom: 8rem;
+
+.skills-section .flex-row .column:nth-child(1){
+  flex-basis:unset;
 }
 
-.skills-softwares .flex-row .column h4 {
-  width: 300px;
-  font-weight: 500;
-  text-decoration: underline;
+.line{
+  height: 0.2rem;
+  background-color: var(--color-black);
 }
 
+/* skills and software section ends  CTRL + /   */
 
-
-.line {
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-grey);
-  margin-bottom: 7rem;
-}
-/*  software and skills  section sytle ends */
 
 /* contact section sytle starts */
 
-.contact {
+.contact{
   margin-bottom: 12rem;
 }
 
-.contact .flex-row {
+.contact .flex-row{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+justify-content: space-between;
+align-items: center;
 }
-.contact .flex-row .column:nth-child(1) {
+.contact .flex-row .column:nth-child(1){
   flex-basis: 30%;
+}
+
+.contact a{
+  text-decoration: none;
 }
 
 /* contact section sytle ends */
 
-/* footer section sytle starts */
 
-.footer {
-  margin-bottom: 4rem;
-}
-.footer .flex-row {
+
+/* footer starts */
+
+.footer{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rem;
 }
 
 .social-links {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
 }
-/* footer section sytle ends */
 
-/* SECTION WISE STYLE ENDS */
+/* footer ends */
 
-/* OTHER PAGES STYLING */
+/* BLOG PAGE STYLING STARTS */
 
- *
+/* .blogs{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.blog-text-info{
+
+} */
+
 .blog-card{
   display: flex;
   justify-content: space-between;
-
+  gap: 10rem;
   padding-block: 10rem;
   border-bottom: 2.5px solid var(--color-grey);
   margin-bottom:5rem;
@@ -227,6 +245,7 @@ Large: 1.8
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1 0 50%;
 }
 
 .blog-title{
@@ -295,6 +314,15 @@ Large: 1.8
 .underline{
   text-decoration: underline;
 }
+/* BLOG DETAIL STYLING ENDS */
+
+
+
+/* Media queries for responsive 
+1. Media queries for tablet (@media (max-width: 59rem) {})
+2. Media queries for mobile (@media (max-width: 34rem) {})*/
+
+/* 545px - 944px */
 @media (max-width: 59rem){
   .container {
     max-width: 75rem;
@@ -333,9 +361,9 @@ Large: 1.8
 
 /* 0 - 544px */
 @media (max-width: 34rem) {
-  .container {
+  /* .container {
     max-width: 40rem;
-  }
+  } */
   .nav {
     margin-block: 2rem;
   }
@@ -383,4 +411,22 @@ Large: 1.8
   header,main,footer{
     padding: 0 1rem;
   }
+}
+.flex{
+  display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* buttons */
+
+.btn{
+  color: #000;
+  font-size: 2.4rem;
+}
+.color-red{
+  color: #ff0000;
+}
+.g-3{
+  gap: 3rem;
 }

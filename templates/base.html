@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -21,20 +20,18 @@
         </nav>
       </div>
     </header>
-    {% block content %}
-    {% endblock content %}
-    <footer class="footer">
+    <main>
+     {% block main %}
+     {% endblock %}
+    </main>
+    <footer>
       <div class="container">
-        <div class="flex-row">
-          <div class="column">
-            <p class="nav-link">&copy; puzan 2022</p>
-          </div>
-          <div class="column">
-            <div class="social-links">
-              <a href="#" class="nav-link">Facebook</a>
-              <a href="#" class="nav-link">Linkedin</a>
-              <a href="#" class="nav-link">Twitter</a>
-            </div>
+        <div class="footer">
+          <a href="#" class="nav-link">PUZAN@DGAF</a>
+          <div class="social-links">
+            <a href="#" class="nav-link">Facebook</a>
+            <a href="#" class="nav-link">Twitter</a>
+            <a href="#" class="nav-link">Linkedin</a>
           </div>
         </div>
       </div>
